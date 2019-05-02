@@ -1,4 +1,12 @@
 extends layouts/main
 
 block content
-    p productsWrite
+    .form-container
+        form(action=`/admin${routes.productsWrite}`, method="post" enctype="multipart/form-data" , required )
+            div.imageUpload
+                label(for="file") 제품 이미지
+                input(type="file", id="file", name="productImage", required=true, accept="image/*")
+            input(type="text", name="name", placeholder="제품명" required)
+            input(type="text", name="price", placeholder="제품 가격" required)
+            input(type="text", name="description", placeholder="제품설명", required)
+            input(type="submit", value="제품 등록")

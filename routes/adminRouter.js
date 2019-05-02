@@ -1,19 +1,19 @@
 import express from "express";
 import routes from "./routes";
-import {
-  admin,
-  products,
-  productsWrite,
-  productsDetail,
-  productsEdit,
-  productsDelete
-} from "../controllers/adminController";
 const adminRouter = express.Router();
 
-adminRouter.get(routes.admin, admin);
+import {
+  products,
+  getProductsWrite,
+  productsDetail,
+  productsEdit,
+  productsDelete,
+  postProductsWrite
+} from "../controllers/adminController";
+
 adminRouter.get(routes.products, products);
-adminRouter.get(routes.productsWrite, productsWrite);
-adminRouter.post(routes.productsWrite);
+adminRouter.get(routes.productsWrite, getProductsWrite);
+adminRouter.post(routes.productsWrite, postProductsWrite);
 adminRouter.get(routes.productsDetail, productsDetail);
 adminRouter.get(routes.productsEdit, productsEdit);
 adminRouter.post(routes.productsEdit);
