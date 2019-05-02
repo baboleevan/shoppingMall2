@@ -1,10 +1,10 @@
 //외장 모듈
 import express from "express";
+import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import logger from "morgan";
 import dotenv from "dotenv";
-import bodyParser from "body-parser";
 
 // 라우트 모듈
 import globalRouter from "./routes/globalRouter";
